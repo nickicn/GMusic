@@ -1,0 +1,20 @@
+git config --global user.name nickicn
+git config --global user.email nicolelopes0008@gmail.com
+
+cd GMusic
+npm i
+
+
+Criar o projeto
+ npx create-expo-app@latest GMusic --template blank
+
+Instalar os pacotes necessários
+  npx expo install react-dom react-native-web @expo/metro-runtime
+  npx expo install @react-native-community/slider
+  npx expo install expo-av
+
+Restaurar projeto
+  npm i
+
+Executar projeto
+  npx expo start --localhost --android
