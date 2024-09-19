@@ -1,0 +1,1 @@
+Print 1 => A imagem, simbolos, título, autor da música, barra de tempo e cronômetro foram adicionados <3
