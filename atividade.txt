@@ -1,1 +1,4 @@
 Print 1 => A imagem, simbolos, título, autor da música, barra de tempo e cronômetro foram adicionados <3
+Print 2 => Ele enumera a música para poder identificar qual esta tocando
+Print 3 => Adiciona o nome do artista e o nome da música
+Print 4 => Aqui os botões começam a funcionar e a música à tocar
