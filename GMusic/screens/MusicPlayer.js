@@ -115,7 +115,9 @@ import songs from '../model/data'
         }
 
         useEffect(() => {
-    })
+            const intervalId = setInterval(updatePosition, 500);
+            return () => clearInterval(intervalId);
+    }, [sound, isPlaying]);
     
      return (
     <SafeAreaView style={styles.container}>
@@ -154,17 +156,28 @@ import songs from '../model/data'
         <View>
             <Slider
                 style={styles.progressBar}
-                value={10}
+                value={songStatus ? songStatus.positionMillis : 0}
                 minimumValue={0}
-                maximumValue={100}
+                maximumValue={songStatus ? songStatus.durationMillis : 0}
                 thumbTintColor='#FFD369'
                 minimumTrackTintColor='#FFD369'
                 maximumTrackTintColor='#FFF'
-                onSlidingComplete={() => { }}
+                onSlidingComplete={(value) => { 
+                    sound.setPositionAsync(value)
+                }}
             />
             <View style={styles.progressLevelDuration}>
-                <Text style={styles.progressLabelText}>00:00</Text>
-                <Text style={styles.progressLabelText}>00:00</Text>
+                <Text style={styles.progressLabelText}>
+                    {songStatus ?
+                     (`${Math.floor(songStatus.positionMillis / 1000 / 60)}:${String(Math.floor(((songStatus.positionMillis / 1000) % 60))).padStart(2, "0")}`
+                     ) : "00:00"
+                    }
+                </Text>
+                <Text style={styles.progressLabelText}>
+                    {songStatus ?
+                     (`${Math.floor(songStatus.durationMillis / 1000 / 60)}:${String(Math.floor(((songStatus.durationMillis / 1000) % 60))).padStart(2, "0")}`
+                     ) : "00:00"
+                    }</Text>
             </View>
         </View>
 

@@ -2,3 +2,4 @@ Print 1 => A imagem, simbolos, título, autor da música, barra de tempo e cron�
 Print 2 => Ele enumera a música para poder identificar qual esta tocando
 Print 3 => Adiciona o nome do artista e o nome da música
 Print 4 => Aqui os botões começam a funcionar e a música à tocar
+Print 5 => É possível pausar a música e dar play, além de poder avançar a música pela barra de tempo
